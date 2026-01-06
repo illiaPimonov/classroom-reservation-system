@@ -2,7 +2,7 @@
 
 Jednoduchá konzolová aplikace pro správu učeben a jejich rezervací
 ve škole nebo na univerzitě.  
-Aplikace je napsána v jazyce Python a používá **pouze standardní knihovnu**.
+Aplikace je napsána v jazyce Python a používá pouze standardní knihovnu.
 
 ---
 
@@ -21,13 +21,13 @@ Aplikace umožňuje uživateli:
 - odstranit všechny rezervace,
 - kompletně smazat knihu rezervací (učebny i rezervace).
 
-Uživatelské rozhraní je **textové (CLI)**, bez grafického rozhraní.
+Uživatelské rozhraní je textové (CLI), bez grafického rozhraní.
 
 ---
 
 ## Požadavky
 
-- Python **3.10 nebo novější**
+- Python 3.10 nebo novější
 - Není potřeba virtuální prostředí
 - Nejsou použity žádné externí knihovny
 
