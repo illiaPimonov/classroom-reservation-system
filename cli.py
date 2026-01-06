@@ -1,5 +1,7 @@
 from reservation_book import ReservationBook
 from errors import ReservationConflictError, NotFoundError
+from validator import Validator
+from storage import Storage
 import handlers
 
 
@@ -22,6 +24,8 @@ MENU_TEXT = """
 class AppContext:
     def __init__(self):
         self.reservation_book = ReservationBook()
+        self.validator = Validator()
+        self.storage = Storage()
 
 
 def read_user_input(prompt_text):
@@ -56,13 +60,13 @@ def run_cli():
             print("Bye!")
             return
 
-        handler = command_handlers.get(user_choice)
-        if handler is None:
+        selected_handler = command_handlers.get(user_choice)
+        if selected_handler is None:
             print("Unknown option.")
             continue
 
         try:
-            handler()
+            selected_handler()
         except ReservationConflictError as error:
             print("[CONFLICT] {}".format(error))
         except (ValueError, NotFoundError, OSError, FileNotFoundError) as error:
